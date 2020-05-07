@@ -19,7 +19,12 @@ function ToggleParent() {
   };
 
   return (
-    <div>
+    <motion.div
+      initial={{ y: 150, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ x: 300, opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div className="togglePrnt_body">
         <motion.div
           variants={variants}
@@ -36,7 +41,7 @@ function ToggleParent() {
           ))}
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

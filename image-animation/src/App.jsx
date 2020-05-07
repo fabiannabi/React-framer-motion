@@ -6,21 +6,23 @@ import Toggle from "./components/Toggle";
 import ToggleParent from "./components/ToggleParent";
 import CollapseCard from "./components/ColapseCard";
 import ButtonChange from "./components/buttonBack";
+import { AnimatePresence } from "framer-motion";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App(props) {
   return (
-    <div>
-      <NavBar name={"ImageOnLoad"} />
-      <ImageCard />
-      <NavBar name={"OnClick Toggle"} />
-      <Toggle />
-      <NavBar name={"OnClick Toggle Parent/Children"} />
-      <ToggleParent />
-      <NavBar name={"CollapseCard"} />
-      <CollapseCard />
-      <NavBar name={"Button Background"} />
-      <ButtonChange />
-    </div>
+    <Router>
+      <NavBar />
+      <AnimatePresence>
+        <Switch>
+          <Route path="/" exact component={ImageCard} />
+          <Route path="/Toggle" component={Toggle} />
+          <Route path="/ToggleParent" component={ToggleParent} />
+          <Route path="/collapseCard" component={CollapseCard} />
+          <Route path="/buttonChange" component={ButtonChange} />
+        </Switch>
+      </AnimatePresence>
+    </Router>
   );
 }
 

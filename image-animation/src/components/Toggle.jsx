@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 function Toggle() {
   /*se usa un state como switch de true o false//
@@ -12,23 +13,33 @@ function Toggle() {
 
   const variants = {
     active: { background: "aquamarine", rotate: 0 },
-    disabled: { background: "coral", rotate: 90 },
+    disabled: { background: "coral", rotate: 0 },
   };
 
   return (
-    <div>
-      <div className="toggle_body">
+    <AnimatePresence>
+      {active && (
         <motion.div
-          variants={variants}
-          animate={active ? "active" : "disabled"}
+          initial={{ y: 150, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 1 }}
-          className="toggle_card"
-          onClick={() => setToggle(!active)}
+          className="toggle-wrap"
         >
-          Click Me
+          <div className="toggle_body">
+            <motion.div
+              variants={variants}
+              animate={active ? "active" : "disabled"}
+              transition={{ duration: 1 }}
+              className="toggle_card"
+              onClick={() => setToggle(!active)}
+            >
+              Click Me
+            </motion.div>
+          </div>
         </motion.div>
-      </div>
-    </div>
+      )}
+    </AnimatePresence>
   );
 }
 

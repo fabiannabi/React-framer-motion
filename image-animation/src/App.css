@@ -6,7 +6,10 @@
 body {
   background: cornsilk;
 }
-
+.toggle-wrap {
+  overflow-y: hidden;
+  height: 400px;
+}
 .icon {
   display: flex;
   justify-content: end;
@@ -23,7 +26,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 3rem 0;
+  margin: 4rem 0;
+  overflow-x: hidden;
 }
 
 .togglePrnt_body {
@@ -63,10 +67,19 @@ body {
   background-color: rgb(218, 219, 128);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
-.title {
-  text-align: center;
+
+.navlist {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navlist li {
+  margin: 0 2rem;
+  list-style: none;
 }
 
 .toggle_card {
@@ -98,7 +111,7 @@ body {
 
 .background {
   position: relative;
-  height: 200px;
+  height: 100vh;
 }
 
 .change {
