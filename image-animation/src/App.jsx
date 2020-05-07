@@ -5,6 +5,7 @@ import ImageCard from "./components/image-card";
 import Toggle from "./components/Toggle";
 import ToggleParent from "./components/ToggleParent";
 import CollapseCard from "./components/ColapseCard";
+import ButtonChange from "./components/buttonBack";
 
 function App(props) {
   return (
@@ -17,6 +18,8 @@ function App(props) {
       <ToggleParent />
       <NavBar name={"CollapseCard"} />
       <CollapseCard />
+      <NavBar name={"Button Background"} />
+      <ButtonChange />
     </div>
   );
 }

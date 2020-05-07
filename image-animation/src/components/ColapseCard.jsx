@@ -16,7 +16,11 @@ function CollapseCard() {
     },
     closed: {
       height: 90,
-      transition: { staggerChildren: 0.1, when: "afterChildren" },
+      transition: {
+        staggerChildren: 0.1,
+        when: "afterChildren",
+        staggerDirection: -1,
+      },
     },
   };
 
@@ -42,7 +46,7 @@ function CollapseCard() {
           animate={isOpen ? "open" : "closed"}
           className="card"
         >
-          💿MEGADETH <motion.div variants={arrowVariants}>⬆</motion.div>
+          MEGADETH <motion.div variants={arrowVariants}>⬆</motion.div>
           {songs.map((song) => (
             <motion.div variants={songVariants} className="song" key={song}>
               {song}
